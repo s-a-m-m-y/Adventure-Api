@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Option text:</strong>
+  <%= @adventure_option.option_text %>
+</p>
+
+<p>
+  <strong>Adventure:</strong>
+  <%= @adventure_option.adventure_id %>
+</p>
+
+<%= link_to 'Edit', edit_adventure_option_path(@adventure_option) %> |
+<%= link_to 'Back', adventure_options_path %>

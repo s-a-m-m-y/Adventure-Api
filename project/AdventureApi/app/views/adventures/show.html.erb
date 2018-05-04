@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @adventure.text %>
+</p>
+
+<p>
+<% if @adventure_options.size > 0 %>
+<table>
+  <thead>
+    <tr>
+      <th>Option text</th>
+      <th>Adventure</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adventure_options.each do |adventure_option| %>
+      <tr>
+        <td><%= adventure_option.option_text %></td>
+        <td><%= adventure_option.adventure_id %></td>
+        <td><%= link_to 'Show', adventure_option %></td>
+        <td><%= link_to 'Edit', edit_adventure_option_path(adventure_option) %></td>
+        <td><%= link_to 'Destroy', adventure_option, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+<% if @adventure_options.size < 1 %>
+  No adventure option
+<% end %>
+<br/>
+<%= link_to 'New Adventure Option', new_adventure_option_path %>
+</p>
+
+<p>
+  <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
+  <%= link_to 'Back', adventures_path %>
+</p>
