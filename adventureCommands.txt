@@ -1,0 +1,29 @@
+# Create a project names "adventure"
+rails new AdventureApi -d mysql
+
+# Navigate into the folder
+cd AdventureApi
+
+# Open RandomAdventure/config/database.yml
+# Add the default password of password
+# should read:
+#   password: password
+
+# Create the project's database
+rake db:create
+
+# Build the Adventure controller and model
+rails generate scaffold Adventure text:string
+
+# Makes the above model into a database table
+rails db:migrate
+
+# Build adventure options
+# "Enter the door" vs "Wait in room"
+rails generate scaffold Adventure_Option option_text:text adventure_id:integer
+
+# Makes the above model into a database table
+rails db:migrate
+
+# Add relationships in app/models/adventure_option.rb & app/models/adventure.rb
+# Display adventure options in Adventure#show

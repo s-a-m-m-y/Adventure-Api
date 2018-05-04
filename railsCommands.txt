@@ -45,8 +45,4 @@ rbenv rehash
 # Setting Up MySQL
 sudo apt-get install mysql-server mysql-client libmysqlclient-dev
 
-# Create a project names "adventure"
-rails new adventure -d mysql
-
-#Start server
-rails server
+#adventureCommands.txt for rails commands and instructions
