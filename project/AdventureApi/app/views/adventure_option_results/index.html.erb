@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Adventure Option Results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reward</th>
+      <th>Adventure option</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adventure_option_results.each do |adventure_option_result| %>
+      <tr>
+        <td><%= adventure_option_result.reward %></td>
+        <td><%= adventure_option_result.adventure_option_id %></td>
+        <td><%= link_to 'Show', adventure_option_result %></td>
+        <td><%= link_to 'Edit', edit_adventure_option_result_path(adventure_option_result) %></td>
+        <td><%= link_to 'Destroy', adventure_option_result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adventure Option Result', new_adventure_option_result_path %>

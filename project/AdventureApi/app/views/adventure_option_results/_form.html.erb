@@ -1,0 +1,27 @@
+<%= form_with(model: adventure_option_result, local: true) do |form| %>
+  <% if adventure_option_result.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(adventure_option_result.errors.count, "error") %> prohibited this adventure_option_result from being saved:</h2>
+
+      <ul>
+      <% adventure_option_result.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :reward %>
+    <%= form.text_area :reward, id: :adventure_option_result_reward %>
+  </div>
+
+  <div class="field">
+    <%= form.label :adventure_option_id %>
+    <%= form.number_field :adventure_option_id, id: :adventure_option_result_adventure_option_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
