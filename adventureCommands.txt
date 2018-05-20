@@ -31,3 +31,10 @@ rails db:migrate
 # Add random endpoint to adventure Adventure controller
 rake routes
 # Add views/adventures/random.html.rb
+
+# Build adventure option result
+# "Enter the door results in death" vs "Wait in room results in free soup"
+rails generate scaffold Adventure_Option_Result reward:text adventure_option_id:integer
+
+# Makes the above model into a database table
+rails db:migrate
