@@ -25,5 +25,9 @@ rails generate scaffold Adventure_Option option_text:text adventure_id:integer
 # Makes the above model into a database table
 rails db:migrate
 
+# Add random endpoint to adventure Adventure controller
+rake routes
+# Add views/adventures/random.html.rb
+
 # Add relationships in app/models/adventure_option.rb & app/models/adventure.rb
 # Display adventure options in Adventure#show

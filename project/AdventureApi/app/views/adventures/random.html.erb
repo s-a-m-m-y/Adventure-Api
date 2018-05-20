@@ -21,9 +21,6 @@
       <tr>
         <td><%= adventure_option.option_text %></td>
         <td><%= adventure_option.adventure_id %></td>
-        <td><%= link_to 'Show', adventure_option %></td>
-        <td><%= link_to 'Edit', edit_adventure_option_path(adventure_option) %></td>
-        <td><%= link_to 'Destroy', adventure_option, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,14 +29,7 @@
 <% if @adventure_options.size < 1 %>
   No adventure option
 <% end %>
-<br/>
-<%= link_to 'New Adventure Option', new_adventure_option_path %>
-</p>
 
-<p>
-  <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
-  <%= link_to 'Back', adventures_path %>
-</p>
 <p>
   <%= link_to 'Random Adventure', { :controller => :adventures, :action => :random } %>
 </p>

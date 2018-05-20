@@ -13,6 +13,13 @@ class AdventuresController < ApplicationController
     @adventure_options = AdventureOption.where( adventure_id: params[:id] )
   end
 
+  # GET /adventure/random
+  def random
+    # @adventure = Adventure.order("RAND()").limit(1)
+    @adventure = Adventure.offset(rand(Adventure.count)).first
+    @adventure_options = AdventureOption.where( adventure_id: @adventure.id )
+  end
+
   # GET /adventures/new
   def new
     @adventure = Adventure.new
