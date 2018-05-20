@@ -10,6 +10,7 @@ class AdventureOptionsController < ApplicationController
   # GET /adventure_options/1
   # GET /adventure_options/1.json
   def show
+    @adventure = Adventure.find(@adventure_option.adventure_id)
   end
 
   # GET /adventure_options/new
