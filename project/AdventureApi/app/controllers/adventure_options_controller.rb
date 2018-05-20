@@ -11,6 +11,7 @@ class AdventureOptionsController < ApplicationController
   # GET /adventure_options/1.json
   def show
     @adventure = Adventure.find(@adventure_option.adventure_id)
+    @adventure_option_results = AdventureOptionResult.where( adventure_option_id: params[:id] )
   end
 
   # GET /adventure_options/new

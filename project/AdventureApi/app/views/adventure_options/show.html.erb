@@ -10,5 +10,34 @@
   <%= @adventure_option.adventure_id %>
 </p>
 
+<% if @adventure_option_results.size > 0 %>
+<table>
+  <thead>
+    <tr>
+      <th>Option text</th>
+      <th>Adventure</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adventure_option_results.each do |adventure_option_result| %>
+      <tr>
+        <td><%= adventure_option_result.reward %></td>
+        <td><%= adventure_option_result.adventure_option_id %></td>
+        <td><%= link_to 'Show', adventure_option_result %></td>
+        <td><%= link_to 'Edit', edit_adventure_option_result_path(adventure_option_result) %></td>
+        <td><%= link_to 'Destroy', adventure_option_result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+<% if @adventure_option_results.size < 1 %>
+  No adventure option
+<% end %>
+<br/>
+<%= link_to 'New Adventure Option Result', new_adventure_option_result_path %>
+
 <%= link_to 'Edit', edit_adventure_option_path(@adventure_option) %> |
 <%= link_to 'Back', @adventure %>
