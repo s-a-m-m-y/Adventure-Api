@@ -39,5 +39,9 @@
 <br/>
 <%= link_to 'New Adventure Option Result', new_adventure_option_result_path %>
 
+<p>
+  <%= link_to 'Random Adventure Option Result', adventure_options_random_result_path(id: @adventure_option.id, adventure_option_id: @adventure_option.id) %>
+</p>
+
 <%= link_to 'Edit', edit_adventure_option_path(@adventure_option) %> |
 <%= link_to 'Back', @adventure %>

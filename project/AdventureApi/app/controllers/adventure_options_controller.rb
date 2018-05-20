@@ -14,6 +14,12 @@ class AdventureOptionsController < ApplicationController
     @adventure_option_results = AdventureOptionResult.where( adventure_option_id: params[:id] )
   end
 
+  def random_result
+    @adventure_option_results = AdventureOptionResult.where( adventure_option_id: params[:adventure_option_id] )
+    @adventure_option_result = @adventure_option_results.offset(rand(@adventure_option_results.count)).first
+    redirect_to adventure_option_result_path(@adventure_option_result.id)
+  end
+
   # GET /adventure_options/new
   def new
     @adventure_option = AdventureOption.new
