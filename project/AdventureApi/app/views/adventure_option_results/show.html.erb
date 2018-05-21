@@ -6,9 +6,5 @@
 </p>
 
 <p>
-  <strong>Adventure option:</strong>
-  <%= @adventure_option_result.adventure_option_id %>
+  <%= link_to 'Random Adventure', { :controller => :adventures, :action => :random } %>
 </p>
-
-<%= link_to 'Edit', edit_adventure_option_result_path(@adventure_option_result) %> |
-<%= link_to 'Back', adventure_option_results_path %>
