@@ -64,7 +64,12 @@ class AdventureOptionResultsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_adventure_option_result
-      @adventure_option_result = AdventureOptionResult.find(params[:id])
+      begin
+        @adventure_option_result = AdventureOptionResult.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        @adventure_option_result = AdventureOptionResult.new
+        @adventure_option_result.reward = "Nothin happens"
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
