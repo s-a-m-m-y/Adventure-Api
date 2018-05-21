@@ -1,27 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Text:</strong>
   <%= @adventure.text %>
 </p>
 
 <p>
 <% if @adventure_options.size > 0 %>
-<table>
-  <thead>
-    <tr>
-      <th>Option</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @adventure_options.each do |adventure_option| %>
-      <tr>
-        <td><%= link_to adventure_option.option_text, adventure_options_random_result_path(id: adventure_option.id, adventure_option_id: adventure_option.id) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% @adventure_options.each do |adventure_option| %>
+    <%= link_to adventure_option.option_text, adventure_options_random_result_path(id: adventure_option.id, adventure_option_id: adventure_option.id) %></td>
+    </br>
+  <% end %>
 <% end %>
 <% if @adventure_options.size < 1 %>
   No adventure option
