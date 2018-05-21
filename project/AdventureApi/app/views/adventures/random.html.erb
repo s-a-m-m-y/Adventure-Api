@@ -10,17 +10,14 @@
 <table>
   <thead>
     <tr>
-      <th>Option text</th>
-      <th>Adventure</th>
-      <th colspan="3"></th>
+      <th>Option</th>
     </tr>
   </thead>
 
   <tbody>
     <% @adventure_options.each do |adventure_option| %>
       <tr>
-        <td><%= adventure_option.option_text %></td>
-        <td><%= adventure_option.adventure_id %></td>
+        <td><%= link_to adventure_option.option_text, adventure_options_random_result_path(id: adventure_option.id, adventure_option_id: adventure_option.id) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,7 +26,3 @@
 <% if @adventure_options.size < 1 %>
   No adventure option
 <% end %>
-
-<p>
-  <%= link_to 'Random Adventure', { :controller => :adventures, :action => :random } %>
-</p>
